@@ -64,7 +64,7 @@ def generate_invoice():
         for item_id, quantity in cart.items():
             item_name, item_price = store_items[item_id]
             total_price = item_price * quantity
-            sum +=total_price           
+            total +=total_price           
             file.write(f"\n{item_id} {item_name} {item_price} {quantity} {total_price}")
       
         file.write(f"\ntotal amount:: {total}")       
