@@ -142,7 +142,7 @@ select * from employeesTable where comm is null;
 select ename,sal from employeesTable  where sal not in (select sal from employeesTable where sal between 2500 and 4000);
 
 -- d. Write a query to display the name, job title and salary of employees who don’t have manager?
-select m.ename as manger, e.ename as employee  from employeesTable m join employeesTable e on e.empno=m.mgr;
+select m.ename as manger, e.ename as employee  from employeesTable m right join employeesTable e on e.empno=m.mgr where m.mgr is null;
 
 -- e. Write a query to display the name of employee whose name contains “A” as third alphabet?
 select * from employeesTable where ename like '__a%'
