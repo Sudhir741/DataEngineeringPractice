@@ -54,7 +54,7 @@ db.movies.find({year: { $gte: 1990, $lte: 1999 }});
 db.movies.find({$or: [{ year: {$lt: 2000}},{ year:{ $gt: 2010 }}]});
 db.movies.find({title: { $regex: /^Inglorious/, $options: 'i' }});
 db.movies.find({},{title: 1,actors: 1,_id: 0}).sort({ title: -1 });
-db.movies.find({},{__id: 0}).sort({ movies: -1 });
+db.movies.find({},{__id: 0}).sort({ year: -1 });
 db.movies.find().limit(1);
 db.movies.find().skip(2).limit(1);
 
