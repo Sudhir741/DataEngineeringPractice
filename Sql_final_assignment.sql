@@ -33,7 +33,7 @@ INSERT INTO STUDENT (StdID, StdName, Sex, Percentage, SClass, Sec, Stream, DOB) 
 (1021, 'TANISHK GUPTA', 'M', 55, 12, 'C', 'Science', '1998/04/11'),
 (1022, 'TANMAY AGARWAL', 'M', 57, 11, 'C', 'Commerce', '1998/06/28'), 
 (1023, 'YASH SAXENA', 'M', 79, 11, 'C', 'Science', '1998/03/13'),
-(1024, 'YESH DUBEY', 'M', 85, 12, 'C', 'Commerce', '1998/04/03')
+(1024, 'YESH DUBEY', 'M', 85, 12, 'C', 'Commerce', '1998/04/03');
 
 -- Lab Activity 2
 
@@ -41,16 +41,20 @@ INSERT INTO STUDENT (StdID, StdName, Sex, Percentage, SClass, Sec, Stream, DOB) 
 SELECT * FROM student ;
 
 -- 2. To display ony name and date of birth from the table STUDENT. 
-SELECT StdName, DOB FROM student ;
+SELECT StdName, DOB 
+FROM student;
 
 -- 3. To display all students record where percentage is greater of equal to 80 FROM student table. 
-SELECT * FROM student WHERE percentage >= 80;
+SELECT * FROM student 
+WHERE percentage >= 80;
 
 -- 4. To display student name, stream and percentage where percentage of student is more than 80 
-SELECT StdName, Stream, Percentage WHERE percentage > 80;
+SELECT StdName, Stream, Percentage 
+WHERE percentage > 80;
 
 -- 5. To display all records of science students whose percentage is more than 75 form student table. 
-SELECT * FROM student WHERE stream = 'Science' AND percentage > 75;
+SELECT * FROM student 
+WHERE stream = 'Science' AND percentage > 75;
 
 
 -- Lab Activity 3
@@ -88,7 +92,7 @@ WHERE percentage >=60 AND percentage<=80 ;
 
 -- Lab Activity 5:
 -- 1. To change a studentname from SWATI MISHRA to SWATIVERMA whose StdID is 1014 and also change percentage 86.
-UPDATE Student SET StdName = ‘SWATI VERMA’, percentage = 86
+UPDATE Student SET StdName = 'SWATI VERMA', percentage = 86
 WHERE StdId = 1014;
 
 -- 2. To delete the records form student table where StdId is 1016.
@@ -98,13 +102,15 @@ DELETE FROM Student WHERE StdID = 1016;
 SELECT * FROM Student WHERE StdName LIKE 'G_' ; 
 SELECT * FROM Student WHERE StdName='G';
 SELECT * FROM Student WHERE StdName LIKE 'G%' ; 
-SELECT * WHERE Student WHERE StdName='%G%' ;
+SELECT * From Student WHERE StdName='%G%' ;
 
 -- 4. Display all the streams in student table.
 SELECT DISTINCT Stream FROM Student;
 
 -- 5. Note the output of the following statement.
-SELECT StdName, Sex, Stream FROM Student WHERE percentage BETWEEN 70 AND 80
+SELECT StdName, Sex, Stream 
+FROM Student 
+WHERE percentage BETWEEN 70 AND 80;
 
 -- DO IT YOURSELF
 CREATE TABLE employeesTable (
@@ -132,26 +138,36 @@ INSERT INTO employeesTable (empno, ename, job, mgr, hiredate, sal, comm, deptno)
 
 
 -- a. Write a query to display EName and Sal of employees whose salary are greater than or equal to 2200?
-use classicmodels
-select ename, sal from employeesTable where sal >= 2200;
+use classicmodels;
+select ename, sal 
+from employeesTable 
+where sal >= 2200;
 
 -- b. Write a query to display details of employs who are not getting commission?
-select * from employeesTable where comm is null;
+select * from employeesTable 
+where comm is null;
 
 -- c. Write a query to display employee name and salary of those employees who don’t have their salary in range of 2500 to 4000?
-select ename,sal from employeesTable  where sal not in (select sal from employeesTable where sal between 2500 and 4000);
+select ename,sal 
+from employeesTable  
+where sal not in (select sal from employeesTable where sal between 2500 and 4000);
 
 -- d. Write a query to display the name, job title and salary of employees who don’t have manager?
-select m.ename as manger, e.ename as employee  from employeesTable m right join employeesTable e on e.empno=m.mgr where m.mgr is null;
+select m.ename as manger, e.ename as employee  
+from employeesTable m right join employeesTable e on e.empno=m.mgr where m.mgr is null;
 
 -- e. Write a query to display the name of employee whose name contains “A” as third alphabet?
-select * from employeesTable where ename like '__a%'
+select * from employeesTable 
+where ename like '__a%';
 
 -- f. Write a query to display the name of employee whose name contains “T” as last alphabet?
-select * from employeesTable where ename like '%t'
+select * from employeesTable 
+where ename like '%t';
 
 -- g. Write a query to display the name of employee whose name contains ”M” as First and “L” as third alphabet?
-select * from employeesTable where ename like 'm_l%'
+select * from employeesTable 
+where ename like 'm_l%';
 
 -- h. Write a query to display details of employs with the text “Not given”, if commission is null
-select ename, ifnull(comm,'Not Given') from employeesTable 
+select ename, ifnull(comm,'Not Given') 
+from employeesTable;
