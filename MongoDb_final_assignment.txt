@@ -1,12 +1,12 @@
 1. Give per share the average closing price, the minimum closing price, the maximum closing price and the average number of shares traded per day.
-	db.stock_prices.aggregate([
+	db.bel20.aggregate([
   {
     $group: {
       _id: null,
       avgClosingPrice: { $avg: "$price.end" },
       minClosingPrice: { $min: "$price.end" },
       maxClosingPrice: { $max: "$price.end" },
-      avgVolume: { $avg: "$volume" }
+      avgVolume: { $avg: "$number" }
     }
   },
   {
