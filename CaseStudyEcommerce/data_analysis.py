@@ -11,8 +11,8 @@ class Product:
     def total_sales(self):
         return self.price * self.quantity_sold
 
-# Example usage
-product = Product('125', 'Electronics', 'Mobile', 500, 10)
+#Objects
+product = Product('231', 'Electronics', 'Laptop', 1234, 10)
 print(product.total_sales())
 
 
